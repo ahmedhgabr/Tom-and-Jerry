@@ -60,7 +60,6 @@ fun ProductCard(
                 .background(color = Color(0xfff8f9fa))
                 .border(0.dp, color = Color.White, shape = RoundedCornerShape(16.dp))
         ) {
-
             Column(
                 verticalArrangement = Arrangement.SpaceBetween,
                 modifier = Modifier
@@ -71,6 +70,7 @@ fun ProductCard(
                     )
                     .requiredWidth(width = 144.dp)
                     .requiredHeight(height = 127.dp)
+                    .padding(bottom = 8.dp)
             ) {
                 Column(
                     verticalArrangement = Arrangement.Center,
@@ -104,7 +104,7 @@ fun ProductCard(
                 }
                 Row(
                     horizontalArrangement = Arrangement.SpaceEvenly,
-                    verticalAlignment = Alignment.CenterVertically,
+                    verticalAlignment = Alignment.Bottom,
                     modifier = Modifier
                         .height(height = 30.dp)
                         .padding(horizontal = 8.dp)
@@ -113,6 +113,7 @@ fun ProductCard(
                     Spacer(modifier = Modifier.width(10.dp))
                     CartButton()
                 }
+//                Spacer(modifier= Modifier.height(3.dp))
             }
         }
 
