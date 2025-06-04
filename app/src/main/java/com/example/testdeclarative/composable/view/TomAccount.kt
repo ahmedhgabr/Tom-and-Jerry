@@ -9,6 +9,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.requiredHeight
+import androidx.compose.foundation.layout.requiredWidth
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -20,6 +22,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
@@ -56,13 +60,6 @@ fun PreviewTomAccount() {
 @Composable
 fun ProfileInfo(imageId: Int, name: String, bio: String, modifier: Modifier = Modifier) {
     Box {
-        Box(
-            modifier = Modifier
-                .clip(shape = RectangleShape)
-                .rotate(45f)
-                .background(Color.White)
-                .height(100.dp)
-        )
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = modifier
@@ -110,6 +107,40 @@ fun ProfileInfo(imageId: Int, name: String, bio: String, modifier: Modifier = Mo
                 )
             }
         }
+        BackgroundContainer()
     }
 
+}
+
+
+@Composable
+fun BackgroundContainer(modifier: Modifier = Modifier) {
+    Box(
+        modifier = modifier
+            .requiredWidth(width = 360.dp)
+            .requiredHeight(height = 242.dp)
+    ) {
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .rotate(degrees = -32.2f)
+                .background(brush = Brush.linearGradient(
+                    0f to Color.White,
+                    0.41f to Color.White,
+                    start = Offset(401.15f, 487.05f),
+                    end = Offset(201.64f, -355.26f))))
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .rotate(degrees = 15.92f)
+                .background(brush = Brush.linearGradient(
+                    0f to Color.White,
+                    0.41f to Color.White,
+                    start = Offset(323.85f, 365.13f),
+                    end = Offset(162.78f, -266.33f))))
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(color = Color(0xff226993)))
+    }
 }

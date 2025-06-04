@@ -8,4 +8,6 @@ import com.example.testdeclarative.R
 
 val IBM = FontFamily(
     Font(R.font.ibm, FontWeight.Normal),
+    Font(R.font.ibm_medium, FontWeight.Medium),
+    Font(R.font.ibm_semibold, FontWeight.SemiBold),
 )
