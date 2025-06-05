@@ -2,10 +2,13 @@ package com.example.testdeclarative.composable.view
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -16,6 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.testdeclarative.R
 import com.example.testdeclarative.composable.component.ProfileInfo
+import com.example.testdeclarative.composable.component.StatItem
 import com.example.testdeclarative.ui.theme.IBM
 import com.example.testdeclarative.ui.theme.bg_Account
 import com.example.testdeclarative.ui.theme.fontColor_White
@@ -32,10 +36,38 @@ fun TomAccount() {
 
         Box(
             modifier = Modifier
-                .background(color = Color(0xFFEEF4F6))
+                .background(color = Color(0xFF226993))
                 .clip(shape = RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp))
-        ){
+        ) {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(color = Color(0xFFEEF4F6))
+                    .padding(horizontal = 16.dp, vertical = 24.dp)
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(bottom = 16.dp),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ) {
+                    StatItem(Color(0xffd0e5f0), R.drawable.evil, "2M 12K", "No. of quarrels", Modifier)
+                    StatItem(Color(0xFFDEEECD), R.drawable.evil, "2M 12K", "No. of quarrels", Modifier)
+                }
+                Spacer(modifier = Modifier.weight(1f))
+                Row(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(bottom = 16.dp),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ) {
+                    StatItem(Color(0xFFF2D9E7), R.drawable.evil, "2M 12K", "No. of quarrels", Modifier)
+                    StatItem(Color(0xFFFAEDCF), R.drawable.evil, "2M 12K", "No. of quarrels", Modifier)
+                }
 
+
+            }
         }
     }
 }
