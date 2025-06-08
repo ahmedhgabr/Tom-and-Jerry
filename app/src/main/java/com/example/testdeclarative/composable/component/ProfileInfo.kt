@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.layout.requiredSize
@@ -23,6 +24,7 @@ import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -38,12 +40,23 @@ import com.example.testdeclarative.ui.theme.profile_info
 
 @Composable
 fun ProfileInfo(imageId: Int, name: String, bio: String, modifier: Modifier = Modifier) {
-    Box {
+    Box(
+        modifier = modifier
+            .fillMaxWidth()
+            .height(180.dp)
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.profile_background),
+            contentDescription = null,
+            modifier = Modifier
+                .fillMaxSize(),
+            contentScale = ContentScale.Crop
+        )
+
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = modifier
                 .fillMaxWidth()
-                .background(profile_info)
                 .padding(top = 16.dp, bottom = 10.dp)
         ) {
             Image(

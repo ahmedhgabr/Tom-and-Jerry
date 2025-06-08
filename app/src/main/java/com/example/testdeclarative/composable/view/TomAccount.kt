@@ -78,8 +78,8 @@ fun TomAccount() {
                         StatItem(
                             Color(0xFFDEEECD),
                             R.drawable.run,
-                            "2M 12K",
-                            "No. of quarrels"
+                            "+500 h",
+                            "Chase time"
                         )
                     }
                     Row(
@@ -92,13 +92,13 @@ fun TomAccount() {
                             Color(0xFFF2D9E7),
                             R.drawable.sad,
                             "2M 12K",
-                            "No. of quarrels"
+                            "Hunting times"
                         )
                         StatItem(
                             Color(0xFFFAEDCF),
                             R.drawable.heart,
-                            "2M 12K",
-                            "No. of quarrels"
+                            "3M 7K",
+                            "Heartbroken"
                         )
                     }
                 }
